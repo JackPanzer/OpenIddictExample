@@ -1,0 +1,18 @@
+﻿@model OpenIddictExample.IdP.ViewModels.LoginViewModel
+
+<form autocomplete="off" asp-route="Login">
+    <input type="hidden" asp-for="ReturnUrl"/>
+    <div class="card">
+        <div id="field-username">
+            <label for="username">Usuario</label>
+            <input id="username" type="text" class="form-control form-control-lg" placeholder="Username" asp-for="User" autofocus>
+        </div>
+        <div id="field-password">
+            <label for="password">Contraseña</label>
+            <input id="password" type="password" class="form-control form-control-lg form-control-last" placeholder="Password" asp-for="Password">
+        </div>
+    </div>
+    <p>
+        <button type="submit" class="btn btn-dark btn-block mt-3">Login</button>
+    </p>
+</form>
