@@ -35,8 +35,6 @@ namespace OpenIddictExample.IdP.Commands.AuthenticateUser
             var user = await this.mediator.Send(new GetUserByLoginData { Login = request.Login.User });
 
             if (user == null) return UserAuthenticationResult.NotFound;
-            if (!user.Enabled) return UserAuthenticationResult.Disabled;
-            if (user.Deleted) return UserAuthenticationResult.Deleted;
             if (!this.CheckPassword(user, request.Login.Password)) return UserAuthenticationResult.WrongPassword;
 
             return UserAuthenticationResult.Success;
@@ -49,10 +47,13 @@ namespace OpenIddictExample.IdP.Commands.AuthenticateUser
                 using (var md5 = System.Security.Cryptography.MD5.Create())
                 {
                     // In the example MD5 has been used for simplicity, in a real environment this wouldn't be pulled AT ALL
-                    var computedPassword = md5.ComputeHash(Encoding.UTF8.GetBytes(password));
-                    var storedPassword = Encoding.UTF8.GetBytes(user.Password);
+                    byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(password);
+                    byte[] hashBytes = md5.ComputeHash(inputBytes);
 
-                    return computedPassword.SequenceEqual(storedPassword);
+                    var computedPassword = Convert.ToHexString(hashBytes);
+                    var storedPassword = user.Password;
+
+                    return computedPassword.Equals(storedPassword);
                 }
             }
             catch (Exception ex)

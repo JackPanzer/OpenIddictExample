@@ -24,7 +24,7 @@ namespace OpenIddictExample.IdP.Infrastructure.Queries
 
         public async Task<IUser<int>?> Handle(GetUserByLoginData request, CancellationToken cancellationToken)
         {
-            return await context.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Email.Equals(request.Login) || x.BoUserLogin.Equals(request.Login));
+            return await context.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Email.Equals(request.Login));
         }
     }
 }

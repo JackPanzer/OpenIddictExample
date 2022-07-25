@@ -11,10 +11,6 @@ namespace OpenIddictExample.IdP.Infrastructure.Models
         public string Password { get; set; }
         public string Salt { get; set; }
         public string Email { get; set; }
-        public string BoClientId { get; set; }
-        public string BoUserLogin { get; set; }
-        public bool Enabled { get; set; }
-        public bool Deleted { get; set; }
         public DateTime RegistrationDate { get; set; }
     }
 }
