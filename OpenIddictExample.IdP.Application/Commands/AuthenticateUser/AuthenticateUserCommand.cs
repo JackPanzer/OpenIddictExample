@@ -5,8 +5,6 @@ using OpenIddictExample.IdP.Domain;
 using OpenIddictExample.IdP.Infrastructure.Queries;
 using OpenIddictExample.IdP.ViewModels;
 using System;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -23,7 +21,7 @@ namespace OpenIddictExample.IdP.Commands.AuthenticateUser
         private readonly IConfiguration config;
         private readonly ILogger log;
 
-        public AuthenticateUserCommandHandler(IMediator mediator, IConfiguration config, ILogger<AuthenticateUserCommandHandler> log) 
+        public AuthenticateUserCommandHandler(IMediator mediator, IConfiguration config, ILogger<AuthenticateUserCommandHandler> log)
         {
             this.mediator = mediator;
             this.config = config;
@@ -44,17 +42,15 @@ namespace OpenIddictExample.IdP.Commands.AuthenticateUser
         {
             try
             {
-                using (var md5 = System.Security.Cryptography.MD5.Create())
-                {
-                    // In the example MD5 has been used for simplicity, in a real environment this wouldn't be pulled AT ALL
-                    byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(password);
-                    byte[] hashBytes = md5.ComputeHash(inputBytes);
+                using var md5 = System.Security.Cryptography.MD5.Create();
+                // In the example MD5 has been used for simplicity, in a real environment this wouldn't be pulled AT ALL
+                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(password);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
 
-                    var computedPassword = Convert.ToHexString(hashBytes);
-                    var storedPassword = user.Password;
+                var computedPassword = Convert.ToHexString(hashBytes);
+                var storedPassword = user.Password;
 
-                    return computedPassword.Equals(storedPassword);
-                }
+                return computedPassword.Equals(storedPassword);
             }
             catch (Exception ex)
             {
