@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OpenIddict.Server.AspNetCore;
 
 namespace OpenIddictExample.SP.Application
 {
@@ -22,7 +23,7 @@ namespace OpenIddictExample.SP.Application
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options => { options.LoginPath = "/Account/Login"; })
-                .AddOpenIdConnect("oidc", options =>
+                .AddOpenIdConnect(OpenIddictServerAspNetCoreDefaults.AuthenticationScheme, options =>
                 {
                     options.RequireHttpsMetadata = false;
                     options.SaveTokens = true;
@@ -31,7 +32,7 @@ namespace OpenIddictExample.SP.Application
                     options.ClientId = this.configuration["oidc:clientId"];
                     options.ClientSecret = this.configuration["oidc:clientSecret"];
                     options.ResponseType = this.configuration["oidc:responseType"];
-                    options.CallbackPath = $"{this.configuration["oidc:callbackPath"]}";
+                    options.CallbackPath = "/signin-oidc";
                 });
         }
 

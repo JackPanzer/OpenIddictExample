@@ -36,7 +36,7 @@ namespace OpenIddictExample.IdP.Application
                 ClientId = "OpenIddictExample",
                 ClientSecret = "388D45FA-B36B-4988-BA59-B187D329C207",
                 DisplayName = "OpenIddictExample LaLey",
-                RedirectUris = { new Uri("https://localhost:44392/Account/OAuthCallback") },
+                RedirectUris = { new Uri("https://localhost:44392/signin-oidc") },
                 Permissions =
                 {
                     OpenIddictConstants.Permissions.Endpoints.Authorization,

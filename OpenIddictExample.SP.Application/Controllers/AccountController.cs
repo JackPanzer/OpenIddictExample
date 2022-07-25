@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using OpenIddict.Server.AspNetCore;
 using System;
 
 namespace OpenIddictExample.SP.Application.Controllers
@@ -16,7 +17,7 @@ namespace OpenIddictExample.SP.Application.Controllers
         public IActionResult Login()
         {
             return Challenge(
-                authenticationSchemes: "oidc",
+                authenticationSchemes: OpenIddictServerAspNetCoreDefaults.AuthenticationScheme,
                 properties: new Microsoft.AspNetCore.Authentication.AuthenticationProperties
                 {
                     RedirectUri = $"{this.configuration["oidc:callbackPath"]}"
