@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OpenIddictExample.IdP.Commands.AuthenticateUser;
-using OpenIddictExample.IdP.Models;
 using OpenIddictExample.IdP.ViewModels;
 using OpenIddictExample.IdP.Infrastructure.Queries;
 using OpenIddict.Server.AspNetCore;
@@ -13,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using OpenIddictExample.Crosscutting;
 
 namespace OpenIddictExample.IdP.Controllers
 {

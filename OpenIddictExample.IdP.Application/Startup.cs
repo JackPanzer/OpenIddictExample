@@ -32,8 +32,11 @@ namespace OpenIddictExample.IdP.Application
                 Assembly.Load("OpenIddictExample.IdP.Infrastructure")
             };
 
-            services.AddMediatR(currentAssembly);
-
+            services.AddMediatR(options =>
+            {
+                options.RegisterServicesFromAssemblies(currentAssembly);
+            });
+            
             var connectionString = Configuration.GetConnectionString("OpenIddictExample");
 
             services.AddDbContext<OpenIddictExampleDbContext<int>>(options =>

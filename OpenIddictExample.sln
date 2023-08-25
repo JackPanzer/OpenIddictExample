@@ -5,13 +5,13 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenIddictExample.IdP.Application", "OpenIddictExample.IdP.Application\OpenIddictExample.IdP.Application.csproj", "{6F3699FF-79A1-436E-BD00-99994BC10EEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenIddictExample.SP.Application", "OpenIddictExample.SP.Application\OpenIddictExample.SP.Application.csproj", "{6C1CA056-1794-4D37-B0A5-D3A1FE350A93}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenIddictExample.IdP.Domain", "OpenIddictExample.IdP.Domain\OpenIddictExample.IdP.Domain.csproj", "{F456A329-47E1-4D0F-9F2C-A4134E0C96AA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenIddictExample.IdP.Infrastructure", "OpenIddictExample.IdP.Infrastructure\OpenIddictExample.IdP.Infrastructure.csproj", "{472EF982-6A63-4866-B7D6-2E6854DE2FD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenIddictExample.SP.ApplicationFramework", "OpenIddictExample.SP.ApplicationFramework\OpenIddictExample.SP.ApplicationFramework.csproj", "{FD41A12E-2661-4905-820A-9054B5308C51}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenIddictExample.Crosscutting", "OpenIddictExample.Crosscutting\OpenIddictExample.Crosscutting.csproj", "{3351C212-6036-49EB-A729-38FA8DCB2757}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenIddictExample.IdP.FrontEnd", "OpenIddictExample.IdP.FrontEnd\OpenIddictExample.IdP.FrontEnd.csproj", "{D02AE7F1-D1E5-4B30-A980-6CFA2DB25659}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{6F3699FF-79A1-436E-BD00-99994BC10EEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F3699FF-79A1-436E-BD00-99994BC10EEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F3699FF-79A1-436E-BD00-99994BC10EEE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C1CA056-1794-4D37-B0A5-D3A1FE350A93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C1CA056-1794-4D37-B0A5-D3A1FE350A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C1CA056-1794-4D37-B0A5-D3A1FE350A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C1CA056-1794-4D37-B0A5-D3A1FE350A93}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F456A329-47E1-4D0F-9F2C-A4134E0C96AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F456A329-47E1-4D0F-9F2C-A4134E0C96AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F456A329-47E1-4D0F-9F2C-A4134E0C96AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,10 +31,14 @@ Global
 		{472EF982-6A63-4866-B7D6-2E6854DE2FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{472EF982-6A63-4866-B7D6-2E6854DE2FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{472EF982-6A63-4866-B7D6-2E6854DE2FD6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FD41A12E-2661-4905-820A-9054B5308C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD41A12E-2661-4905-820A-9054B5308C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD41A12E-2661-4905-820A-9054B5308C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD41A12E-2661-4905-820A-9054B5308C51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3351C212-6036-49EB-A729-38FA8DCB2757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3351C212-6036-49EB-A729-38FA8DCB2757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3351C212-6036-49EB-A729-38FA8DCB2757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3351C212-6036-49EB-A729-38FA8DCB2757}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D02AE7F1-D1E5-4B30-A980-6CFA2DB25659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D02AE7F1-D1E5-4B30-A980-6CFA2DB25659}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D02AE7F1-D1E5-4B30-A980-6CFA2DB25659}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D02AE7F1-D1E5-4B30-A980-6CFA2DB25659}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
